@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Base resets & Clean Minimalism Theme Overrides */
+:root {
+  color-scheme: light;
+}
+
+body {
+  background-color: #F5F5F4 !important;
+  color: #0A0A0A !important;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Force Light Page Containers */
+#root, #root-app-layout, [id^="page-wrapper-"], [id$="-page-container"], [id*="-page"] {
+  background-color: #F5F5F4 !important;
+  background-image: none !important;
+  color: #0A0A0A !important;
+}
+
+/* Convert all extreme dark sections to light stone background */
+.bg-\[\#0a0a0a\],
+.bg-\[\#0b0b0b\],
+.bg-\[\#0c0c0c\],
+.bg-\[\#0e0e0e\],
+.bg-\[\#0f0f0f\],
+.bg-\[\#121212\],
+.bg-neutral-950,
+section[class*="bg-gradient-to"] {
+  background-color: #F5F5F4 !important;
+  background-image: none !important;
+}
+
+/* Specific elements that should be pure clean white inside stone-100 canvas */
+.bg-neutral-900,
+.bg-neutral-900\/50,
+.shadow-2xl\.glass-gradient,
+.bg-\[\#121212\]\/80,
+div[class*="bg-neutral-900\/50"],
+.bg-neutral-900\/90 {
+  background-color: #FFFFFF !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Ensure perfect high contrast typography */
+.text-white, .text-neutral-100, .text-neutral-200 {
+  color: #0A0A0A !important;
+}
+
+.text-neutral-300, .text-neutral-400, .text-neutral-500 {
+  color: rgba(10, 10, 10, 0.6) !important;
+}
+
+.text-transparent.bg-clip-text {
+  color: #0A0A0A !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  -webkit-text-fill-color: #0A0A0A !important;
+}
+
+/* Thin borders instead of white glowing borders */
+.border-white\/5, .border-white\/10, .border-white\/20, .border-neutral-800, .border-white\/30 {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Minimal inputs reset */
+input, textarea, select {
+  background-color: #FFFFFF !important;
+  color: #0A0A0A !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: rgba(10, 10, 10, 0.35) !important;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #0A0A0A !important;
+  outline: none !important;
+}
+
+/* Keep lime-400 highlights readable on light bg */
+.text-lime-400 {
+  color: #7AA200 !important; /* Slightly darker green-lime for readability */
+}
+
+/* Let true lime background look extremely neon and high contrast */
+.bg-lime-400 {
+  background-color: #D9FE00 !important;
+  color: #0A0A0A !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Header promo bar should remain crisp and dark for minimalist structure */
+#shipping-banner {
+  background-color: #0A0A0A !important;
+  color: #F5F5F4 !important;
+}
+
+#shipping-banner .text-lime-400 {
+  color: #D9FE00 !important; /* Keep original pure neon over dark background */
+}
+
+/* Clean minimalist buttons styling */
+button.bg-lime-400, a.bg-lime-400 {
+  background-color: #0A0A0A !important;
+  color: #FFFFFF !important;
+  border-radius: 0px !important;
+  font-family: var(--font-display) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.15em !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+button.bg-lime-400:hover, a.bg-lime-400:hover {
+  background-color: rgba(0, 0, 0, 0.85) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Primary/secondary CTA button standard styling in Minimalism */
+button:not([id="brand-logo-btn"]):not(#sticky-cart-btn):not(#mobile-menu-burger):not([id*="tab-"]):not(.border-0) {
+  border-radius: 0px !important;
+}
+
+/* Make normal cards has sharp corners */
+[class*="rounded-3xl"], [class*="rounded-2xl"], [class*="rounded-xl"] {
+  border-radius: 0px !important;
+}
+
+/* Footer structure overrides */
+footer {
+  background-color: #FFFFFF !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+footer .bg-neutral-950, footer .bg-neutral-950\/40 {
+  background-color: #F5F5F4 !important;
+}
+
+/* Drop shadow overrides: remove heavy glowing shadows, use soft subtle flat outlines */
+.shadow-2xl, .shadow-xl, .shadow-lg, .shadow-md {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Subtle noise overlay animation */
+.noise-overlay {
+  background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+  pointer-events: none;
+  opacity: 0.015;
+}

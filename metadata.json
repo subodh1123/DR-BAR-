@@ -1,0 +1,6 @@
+{
+  "name": "Dr Bar",
+  "description": "Smart, scientific, high-performance protein bar e-commerce experience. Fuel your real life with delicious, premium taste, high protein, and zero compromise.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
